@@ -24,6 +24,10 @@ const Hello = ({ name="Hi TypeScript", age="30", height, isMan, info }) => {
                 <h1>내 이름은 : {name}</h1>
                 <h1>내 나이는 : {age}</h1>
                 <h1>내 키는 : {height}</h1>
+                
+                {isMan ? 
+                    <div>남성입니다.</div> : <div>여성입니다.</div>
+                }
                 <h1>남성 여부 : {isMan.toString()}</h1>
                 <h1>나의 정보 : {info.desc}</h1>
                 <h1>등록 시간 : {info.date.toLocaleString()}</h1>
