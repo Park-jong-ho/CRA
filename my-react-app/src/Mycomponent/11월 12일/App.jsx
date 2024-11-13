@@ -1,50 +1,34 @@
 import { useState } from "react";
-import "./App.css"
+import "./App.css";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import Main from "./page/Main";
+import Detail from "./page/Detail";
+import Search from "./page/Search";
 
 function App() {
-    const [mood, setMood] = useState("Nomal")
-    return (
-        <>
-            <Face3 mood={mood} />
-            <div className={ mood === "Happy" ? "happy" : mood === "Normal" ? "normal" : "sad"}>기분: {mood}</div>
-            <div>
-                <button onClick={() => setMood("Happy")}>Happy</button>
-                <button onClick={() => setMood("Noemal")}>Normal</button>
-                <button onClick={() => setMood("Sad")}>Sad</button>
-            </div>
-        </>
-    )
+  const [inputValue, setInputValue] = useState("");
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <header>
+        <h1>💚 동물 조아 💚</h1>
+        <input
+          value={inputValue}
+          onChange={(event) => setInputValue(event.target.value)}
+        />
+        <button onClick={() => navigate(`/search?animal=${inputValue}`)}>
+          검색
+        </button>
+      </header>
+      <Routes>
+        <Route path="/" element={<Main />}></Route>
+        <Route path="/detail/:id" element={<Detail />}></Route>
+        <Route path="/search" element={<Search />}></Route>
+      </Routes>
+      <footer>all rights reserved to OZ</footer>
+    </>
+  );
 }
 
-// if문으로 리턴하는 JSX문 바꿔주기
-function Face(mood) {
-    if (mood === "Happy") {
-        return "😄"
-    }else if (mood === "Normal") {
-        return "😐"
-    }else {
-        return "😭"
-    }
-}
-
-// 삼항연삼자 사용하기
-function Face2({ mood }) {
-    return (
-        <>
-            {mood === "Happy" ? (<div>😄</div>) : mood === "Normal" ?  (<div>😐</div>) : (<div>😭</div>)}
-        </>
-    )
-}
-
-// 논리 연산자
-function Face3({ mood }) {
-    return (
-        <>
-            {mood === "Happy" && <div>😄</div>}
-            {mood === "Normal" && <div>😐</div>}
-            {mood === "Sad" && <div>😭</div>}
-        </>
-    )
-}
-
-export default App
+export default App;
