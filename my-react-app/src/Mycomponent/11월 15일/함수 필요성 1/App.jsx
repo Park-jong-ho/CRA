@@ -2,7 +2,7 @@ import { useEffect, useState } from "React";
 import "./App.css"
 
 function App() {
-    const [data. setData] = useState([])
+    const [data, setData] = useState([])
 
     useEffect(() => {
     fetch("http://localhost:3000/data")
