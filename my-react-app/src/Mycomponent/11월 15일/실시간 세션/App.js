@@ -1,4 +1,6 @@
 import React from "react";
+import InputSample from "./InputSample";
+import Counter from "./Counter";
 
 const App = () => {
     const name  = "hi react"
@@ -7,6 +9,7 @@ const App = () => {
     return (
         <>
             <Counter />
+            <InputSample />
         </>
     )
 }

@@ -4,10 +4,12 @@ const Counter = () => {
     const [state, setState] = useState( initialState: 10)
 
     const onIncrease = () => {
+        //새로쓰기 (값을 저장 안 함)
         // setState(state + 1) // 상태값을 변환해주는 함수
     }
 
     // 함수형 업데이트를 통해서 최신값을 보장받을 수 있다.
+    // 이어쓰기 (값을 저장함)
     setState((prev) => prev + 1)
     setState((prev) => prev + 1)
     setState((prev) => prev + 1)
