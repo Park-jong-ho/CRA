@@ -1,7 +1,7 @@
 import React from "react";
 
 const Counter = () => {
-    const [state, setState] = useState( initialState: 10)
+    const [state, setState] = useState(10)
 
     const onIncrease = () => {
         //새로쓰기 (값을 저장 안 함)
@@ -21,7 +21,7 @@ const Counter = () => {
     return (
         <div>
             <div>
-                <h1>state 값: {stete}</h1>
+                <h1>state 값: {state}</h1>
                 <button onClick={onIncrease}>+1</button>
                 <button onClick={onDecrease}>+1</button>
             </div>

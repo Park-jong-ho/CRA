@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
 const InputSample = () => {
-    const [text, setText] = useState( initialState: "")
+    //텍스트로 관리
+    const [text, setText] = useState("")
 
     //핸들러 관리
     const onChange = (e) => {

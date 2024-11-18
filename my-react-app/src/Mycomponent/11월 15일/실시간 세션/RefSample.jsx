@@ -3,7 +3,7 @@ import { useRef, useState} from "react"
 
 const RefSample = () => {
     const inputRef = useRef(null)
-    const value = uesRef(0)
+    const value = useRef(0)
     const [state, setState] = useState(0)
 
 

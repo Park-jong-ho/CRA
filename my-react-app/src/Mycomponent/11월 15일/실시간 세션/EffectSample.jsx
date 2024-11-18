@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 
 const EffectTest = () => {
-    const [ count, setCount] = useState( initialState:0 )
-  console.log("Effect test 컴포넌트 렌더링....");
+    const [ count ] = useState( 0 )
+  console.log("1. Effect test 컴포넌트 렌더링....");
   const [number, setNumber] = useState(10);
 
   const callAPI = async () => {
     //1. API 호출
-    console.log("API 호출합니다");
+    console.log("2. API 호출합니다");
 
     //2.상태값 변경
 
@@ -23,7 +23,7 @@ const EffectTest = () => {
   };
 
   useEffect(() => {
-    console.log("Effect test 컴포넌트 마운트");
+    console.log("3. useEffect 호출");
     callAPI();
   }, [count]);
 
